@@ -23,7 +23,7 @@ Budget tracker application that allows offline access and functionality. The use
 
 ## Links
 
-* [Deployed](https://limitless-ridge-04164.herokuapp.com/)
+* [Deployed](https://git.heroku.com/limitless-ridge-04164.git)
 * [Github](https://github.com/anikayoka/within-budget)
   
 ## Srcreenshots
