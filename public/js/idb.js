@@ -48,14 +48,20 @@ function uploadEntry() {
           "Content-Type": "application/json"
         }
       })
-        .then(response => {
-          return response.json();
-        })
-        .then(() => {
+        .then(response => response.json())
+        .then(serverResponse => {
+          if (serverResponse.message) {
+            throw new Error(serverResponse);
+          }
           // delete records if successful
           const transaction = db.transaction(["new_entry"], "readwrite");
           const objectBudgetStore = transaction.objectStore("new_entry");
           objectBudgetStore.clear();
+
+          alert('All saved entries submitted!');
+        })
+        .catch(err => {
+          console.log(err);
         });
     }
   };
